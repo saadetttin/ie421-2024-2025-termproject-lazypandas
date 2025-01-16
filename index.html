@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazy Pandas - Tax Insights</title>
+    <title>Lazy Pandas - Data Science Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -37,24 +37,67 @@
             max-width: 100%;
             height: auto;
             border: 1px solid #ccc;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <!-- Sidebar Navigation -->
     <div class="sidebar">
         <h3 class="text-center">Lazy Pandas</h3>
-        <a href="index.html">Home</a>
-        <a href="tax.html">Tax</a>
-        <a href="gdp.html">GDP</a>
-        <a href="unemployment.html">Unemployment</a>
-        <a href="regression.html">Regression</a>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('tax')">Tax</a>
+        <a href="#" onclick="showPage('gdp')">GDP</a>
+        <a href="#" onclick="showPage('unemployment')">Unemployment</a>
+        <a href="#" onclick="showPage('regression')">Regression</a>
     </div>
-    <div class="content">
-        <h1>Tax Insights</h1>
-        <p>This chart shows the Total Tax Revenue Trends with quarterly shading for significant economic periods:</p>
-        <!-- Visual/TAX.png -->
-        <img src="images/TAX.png" alt="Total Tax Revenue Trends">
-        <p>Explanation of the chart and additional insights can go here.</p>
+
+    <!-- Content Area -->
+    <div id="content" class="content">
+        <!-- Default Page -->
+        <h1>Welcome to Lazy Pandas</h1>
+        <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
     </div>
+
+    <script>
+        // JavaScript to switch content dynamically
+        function showPage(page) {
+            const content = document.getElementById('content');
+            if (page === 'home') {
+                content.innerHTML = `
+                    <h1>Welcome to Lazy Pandas</h1>
+                    <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
+                `;
+            } else if (page === 'tax') {
+                content.innerHTML = `
+                    <h1>Tax Insights</h1>
+                    <p>This chart shows the Total Tax Revenue Trends with quarterly shading for significant economic periods:</p>
+                    <img src="Data/TAX.png" alt="Total Tax Revenue Trends">
+                    <p>Add your detailed explanation about Tax here.</p>
+                `;
+            } else if (page === 'gdp') {
+                content.innerHTML = `
+                    <h1>GDP Insights</h1>
+                    <p>This chart illustrates the GDP trends over time with important economic events highlighted:</p>
+                    <img src="Data/GDP.png" alt="GDP Trends">
+                    <p>Add your detailed explanation about GDP here.</p>
+                `;
+            } else if (page === 'unemployment') {
+                content.innerHTML = `
+                    <h1>Unemployment Insights</h1>
+                    <p>This chart shows the unemployment rate and its correlation with key economic metrics:</p>
+                    <img src="Data/UNEMPLOYMENT.png" alt="Unemployment Rate Trends">
+                    <p>Add your detailed explanation about Unemployment here.</p>
+                `;
+            } else if (page === 'regression') {
+                content.innerHTML = `
+                    <h1>Regression Analysis</h1>
+                    <p>This chart demonstrates the results of regression analysis on the provided dataset:</p>
+                    <img src="images/REGRESSION.png" alt="Regression Analysis Results">
+                    <p>Add your detailed explanation about Regression here.</p>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
