@@ -31,13 +31,44 @@
         }
         .content {
             margin-left: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
+            min-height: 100vh; /* Ensure content takes the full height */
         }
         img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
             border: 1px solid #ccc;
-            margin-top: 20px;
+            margin: 20px auto;
+        }
+        h1, h2 {
+            color: #002b5c;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+        }
+        ul {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: bold;
+            text-align: justify;
+            max-width: 80%; /* Matches the width of the graph */
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: bold;
+            text-align: justify;
+            max-width: 80%; /* Matches the width of the graph */
         }
     </style>
 </head>
@@ -70,72 +101,46 @@
                 `;
             } else if (page === 'tax') {
                 content.innerHTML = `
-                    <h1>Tax Insights</h1>
-                   <div id="content" class="content">
-    <!-- Title -->
-    <h1 style="font-size: 2.5rem; color: #002b5c; font-weight: bold; text-align: center;">Tax Revenue Analysis During Economic Crises</h1>
-
-    <!-- Graph with Controlled Size -->
-    <img src="Visuals/TAX.png" alt="Total Tax Revenue Trends" style="max-width: 80%; height: auto; margin: 20px auto; border: 1px solid #ccc; display: block;">
-
-    <!-- The Great Recession Section -->
-    <div style="max-width: 80%; margin: 20px auto;">
-        <h2 style="font-size: 1.8rem; color: #002b5c; font-weight: bold; margin-top: 30px;">1. The Great Recession (2007–2009): Financial Crisis</h2>
-        <ul style="font-size: 1rem; line-height: 1.8; font-weight: bold;">
-            <li><strong>What Happened:</strong> The financial crisis led to significant declines in economic activity, reducing incomes, corporate profits, and consumer spending—all major tax revenue sources.</li>
-            <li><strong>Graph Reaction:</strong> Tax revenues show a steady decline starting in Q4 2007, with the lowest point in Q2 2009. Personal and corporate taxes dropped due to widespread layoffs and shrinking profits. Recovery begins post-crisis but is slow, with tax revenues only showing gradual increases through 2010.</li>
-            <li><strong>Key Insight:</strong> Financial crises disrupt the tax base, leading to sustained declines in revenue and slow recovery as economic activity rebuilds over time.</li>
-        </ul>
-
-        <!-- The COVID-19 Pandemic Section -->
-        <h2 style="font-size: 1.8rem; color: #002b5c; font-weight: bold; margin-top: 30px;">2. The COVID-19 Pandemic (2020–2021): Health Crisis</h2>
-        <ul style="font-size: 1rem; line-height: 1.8; font-weight: bold;">
-            <li><strong>What Happened:</strong> The pandemic caused a sharp drop in tax revenues due to reduced business activity, temporary shutdowns, and increased unemployment. However, the impact was shorter-lived due to aggressive fiscal stimulus and quicker economic reopening.</li>
-            <li><strong>Graph Reaction:</strong> Tax revenues show a sharp dip in Q2 2020, coinciding with strict lockdowns, but quickly rebound by Q4 2020, with revenues recovering to pre-pandemic levels by 2021. The rapid rebound reflects government stimulus measures that boosted consumer and business activity.</li>
-            <li><strong>Key Insight:</strong> Health crises cause temporary disruptions in tax revenue, but recovery can be quick if effective fiscal and monetary policies are implemented.</li>
-        </ul>
-
-        <!-- Interactions Between Crises -->
-        <h2 style="font-size: 1.8rem; color: #002b5c; font-weight: bold; margin-top: 30px;">Interactions Between Crises</h2>
-        <ul style="font-size: 1rem; line-height: 1.8; font-weight: bold;">
-            <li><strong>Financial Crises Prolong Revenue Losses:</strong> The Great Recession shows how structural financial issues can lead to a prolonged decline in tax revenues as it takes years for jobs and profits to recover.</li>
-            <li><strong>Health Crises Can Cause Sharp Revenue Drops:</strong> The COVID-19 graph shows how external shocks lead to immediate losses in tax revenue, but recovery is faster with effective intervention.</li>
-        </ul>
-
-        <!-- Key Takeaway -->
-        <h2 style="font-size: 1.8rem; color: #002b5c; font-weight: bold; margin-top: 30px;">Key Takeaway</h2>
-        <p style="font-size: 1rem; line-height: 1.8; font-weight: bold;">
-            <strong>Financial Crises:</strong> Gradual tax revenue decline and prolonged recovery (e.g., drop from Q4 2007 to Q2 2009, slow recovery through 2010).<br>
-            <strong>Health Crises:</strong> Sudden revenue drops but quick rebounds (e.g., sharp decline in Q2 2020, full recovery by 2021).
-        </p>
-
-        <!-- Conclusion -->
-        <h2 style="font-size: 1.8rem; color: #002b5c; font-weight: bold; margin-top: 30px;">Conclusion</h2>
-        <p style="font-size: 1rem; line-height: 1.8; font-weight: bold;">
-            Financial crises create long-term damage to the tax base, while health crises lead to short-term shocks with faster recovery. Both emphasize the importance of strong policy responses to stabilize revenues and support economic recovery.
-        </p>
-    </div>
-</div>
-              `;
+                    <h1>Tax Revenue Analysis During Economic Crises</h1>
+                    <img src="Visuals/TAX.png" alt="Total Tax Revenue Trends">
+                    <h2>1. The Great Recession (2007–2009): Financial Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The financial crisis led to significant declines in economic activity, reducing incomes, corporate profits, and consumer spending—all major tax revenue sources.</li>
+                        <li><strong>Graph Reaction:</strong> Tax revenues show a steady decline starting in Q4 2007, with the lowest point in Q2 2009. Personal and corporate taxes dropped due to widespread layoffs and shrinking profits. Recovery begins post-crisis but is slow, with tax revenues only showing gradual increases through 2010.</li>
+                        <li><strong>Key Insight:</strong> Financial crises disrupt the tax base, leading to sustained declines in revenue and slow recovery as economic activity rebuilds over time.</li>
+                    </ul>
+                    <h2>2. The COVID-19 Pandemic (2020–2021): Health Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The pandemic caused a sharp drop in tax revenues due to reduced business activity, temporary shutdowns, and increased unemployment. However, the impact was shorter-lived due to aggressive fiscal stimulus and quicker economic reopening.</li>
+                        <li><strong>Graph Reaction:</strong> Tax revenues show a sharp dip in Q2 2020, coinciding with strict lockdowns, but quickly rebound by Q4 2020, with revenues recovering to pre-pandemic levels by 2021. The rapid rebound reflects government stimulus measures that boosted consumer and business activity.</li>
+                        <li><strong>Key Insight:</strong> Health crises cause temporary disruptions in tax revenue, but recovery can be quick if effective fiscal and monetary policies are implemented.</li>
+                    </ul>
+                    <h2>Key Takeaway</h2>
+                    <p>
+                        <strong>Financial Crises:</strong> Gradual tax revenue decline and prolonged recovery (e.g., drop from Q4 2007 to Q2 2009, slow recovery through 2010).<br>
+                        <strong>Health Crises:</strong> Sudden revenue drops but quick rebounds (e.g., sharp decline in Q2 2020, full recovery by 2021).
+                    </p>
+                    <h2>Conclusion</h2>
+                    <p>
+                        Financial crises create long-term damage to the tax base, while health crises lead to short-term shocks with faster recovery. Both emphasize the importance of strong policy responses to stabilize revenues and support economic recovery.
+                    </p>
+                `;
             } else if (page === 'gdp') {
                 content.innerHTML = `
                     <h1>GDP Insights</h1>
-                    <p>This chart illustrates the GDP trends over time with important economic events highlighted:</p>
                     <img src="Visuals/GDP.png" alt="GDP Trends">
                     <p>Add your detailed explanation about GDP here.</p>
                 `;
             } else if (page === 'unemployment') {
                 content.innerHTML = `
                     <h1>Unemployment Insights</h1>
-                    <p>This chart shows the unemployment rate and its correlation with key economic metrics:</p>
                     <img src="Visuals/UNEMPLOYMENT.png" alt="Unemployment Rate Trends">
                     <p>Add your detailed explanation about Unemployment here.</p>
                 `;
             } else if (page === 'regression') {
                 content.innerHTML = `
                     <h1>Regression Analysis</h1>
-                    <p>This chart demonstrates the results of regression analysis on the provided dataset:</p>
-                    <img src="images/REGRESSION.png" alt="Regression Analysis Results">
+                    <img src="Visuals/REGRESSION.png" alt="Regression Analysis Results">
                     <p>Add your detailed explanation about Regression here.</p>
                 `;
             }
