@@ -3,145 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Project</title>
+    <title>Lazy Pandas - Data Science Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
         }
-        .plot-container {
-            margin-bottom: 50px;
-        }
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
-        }
-        .nav-button {
-            margin: 10px;
-        }
-        .project-image {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-        .poster {
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 30px;
-            margin: 30px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .poster h2 {
-            color: #0056b3;
-        }
-        .poster p {
-            margin-bottom: 15px;
-            color: #333;
-        }
-        .poster ul {
-            list-style: square;
-            margin-left: 20px;
-        }
-        header {
-            background: url('BLOG-2099x600-WEO-CH-1-men-on-motorbike-indonesia-WILLY-KURNIAWAN-REUTERS-Newscom-rtrleleven948224.jpg') no-repeat center center;
-            background-size: cover;
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            background-color: #003b73;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            padding: 50px 0;
+            padding-top: 20px;
         }
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 5px 0;
         }
-        header p {
-            font-size: 1.5rem;
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            margin-left: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+        }
+        h1, h2 {
+            color: #002b5c;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+        }
+        ul {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: bold;
+            text-align: justify;
+            max-width: 80%;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: bold;
+            text-align: justify;
+            max-width: 80%;
         }
     </style>
 </head>
 <body>
-    <header class="text-center">
-        <h1>Data Science Storytelling</h1>
-        <p>An insightful journey through data analysis and visualization.</p>
-    </header>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h3 class="text-center">Lazy Pandas</h3>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('tax')">Tax</a>
+        <a href="#" onclick="showPage('gdp')">GDP</a>
+        <a href="#" onclick="showPage('unemployment')">Unemployment</a>
+        <a href="#" onclick="showPage('regression')">Regression</a>
+    </div>
 
-    <main class="container my-5">
-        <!-- Page 1: Introduction and Storytelling -->
-        <div class="page active" id="page1">
-            <section class="mb-5">
-                <h2>Introduction</h2>
-                <p>Welcome to my data science project. This analysis explores key trends and insights from real-world data, presented with interactive visualizations. The project demonstrates advanced techniques and tools to uncover valuable insights.</p>
-                <img src="project-image.jpg" alt="Project Description Image" class="project-image text-center">
-            </section>
-
-            <section class="poster">
-                <h2>Comparing Economic Crises: Great Recession vs COVID-19</h2>
-                <p><strong>Great Recession (2007–2012):</strong> Triggered by the collapse of the housing market and financial institutions, this crisis led to a sharp economic downturn, widespread unemployment, and slow recovery over several years.</p>
-                <p><strong>COVID-19 Pandemic (2019–2024):</strong> A global health crisis that disrupted supply chains and caused sudden economic contraction. Unlike the Great Recession, recovery efforts were swift, marked by volatility and rapid rebounds in certain sectors.</p>
-                <p><strong>Key Insights:</strong></p>
-                <ul>
-                    <li>The Great Recession highlighted the need for stricter financial regulations.</li>
-                    <li>COVID-19 demonstrated the importance of rapid fiscal and monetary interventions.</li>
-                    <li>Both events underscore the resilience of economies and the importance of data-driven policymaking.</li>
-                </ul>
-            </section>
-
-            <div class="text-center">
-                <button class="btn btn-primary nav-button" onclick="goToPage(2)">Go to Visualizations</button>
-            </div>
-        </div>
-
-        <!-- Page 2: Visualizations -->
-        <div class="page" id="page2">
-            <section class="mb-5">
-                <h2>Visualizations</h2>
-                <div class="plot-container">
-                    <h3>Plot 1: GDP Over Time</h3>
-                    <p>This plot showcases how GDP has changed over the years, highlighting periods of economic growth and recession.</p>
-                    <div id="plot1"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 2: GDP Percentage Change</h3>
-                    <p>Visualizing the percentage changes in GDP provides a clearer picture of economic stability and volatility.</p>
-                    <div id="plot2"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 3: Sector Contribution to GDP</h3>
-                    <p>This visualization breaks down how different sectors contribute to the overall GDP, showcasing their importance over time.</p>
-                    <div id="plot3"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 4: Unemployment and GDP Correlation</h3>
-                    <p>This plot explores the correlation between unemployment rates and GDP, offering insights into economic health.</p>
-                    <div id="plot4"></div>
-                </div>
-
-                <section class="mt-5">
-                    <h2>Conclusion</h2>
-                    <p>In conclusion, this project demonstrates the power of data-driven storytelling to uncover meaningful insights. Through these visualizations, we can better understand the trends, challenges, and opportunities within the data.</p>
-                </section>
-
-                <div class="text-center">
-                    <button class="btn btn-secondary nav-button" onclick="goToPage(1)">Back to Introduction</button>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 Data Science Project by [Your Name]</p>
-    </footer>
+    <!-- Content Area -->
+    <div id="content" class="content">
+        <h1>Welcome to Lazy Pandas</h1>
+        <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
+    </div>
 
     <script>
-        function goToPage(pageNumber) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById(`page${pageNumber}`).classList.add('active');
+        function showPage(page) {
+            const content = document.getElementById('content');
+            if (page === 'home') {
+                content.innerHTML = `
+                    <h1>Welcome to Lazy Pandas</h1>
+                    <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
+                `;
+            } else if (page === 'tax') {
+                content.innerHTML = `
+                    <h1>Tax Revenue Analysis During Economic Crises</h1>
+                    <img src="Visuals/TAX.png" alt="Total Tax Revenue Trends">
+                    <h2>1. The Great Recession (2007–2009): Financial Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The financial crisis led to significant declines in economic activity, reducing incomes, corporate profits, and consumer spending—all major tax revenue sources.</li>
+                        <li><strong>Graph Reaction:</strong> Tax revenues show a steady decline starting in Q4 2007, with the lowest point in Q2 2009. Personal and corporate taxes dropped due to widespread layoffs and shrinking profits. Recovery begins post-crisis but is slow, with tax revenues only showing gradual increases through 2010.</li>
+                        <li><strong>Key Insight:</strong> Financial crises disrupt the tax base, leading to sustained declines in revenue and slow recovery as economic activity rebuilds over time.</li>
+                    </ul>
+                    <h2>2. The COVID-19 Pandemic (2020–2021): Health Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The pandemic caused a sharp drop in tax revenues due to reduced business activity, temporary shutdowns, and increased unemployment. However, the impact was shorter-lived due to aggressive fiscal stimulus and quicker economic reopening.</li>
+                        <li><strong>Graph Reaction:</strong> Tax revenues show a sharp dip in Q2 2020, coinciding with strict lockdowns, but quickly rebound by Q4 2020, with revenues recovering to pre-pandemic levels by 2021. The rapid rebound reflects government stimulus measures that boosted consumer and business activity.</li>
+                        <li><strong>Key Insight:</strong> Health crises cause temporary disruptions in tax revenue, but recovery can be quick if effective fiscal and monetary policies are implemented.</li>
+                    </ul>
+                    <h2>Key Takeaway</h2>
+                    <p><strong>Financial Crises:</strong> Gradual tax revenue decline and prolonged recovery (e.g., drop from Q4 2007 to Q2 2009, slow recovery through 2010).<br>
+                    <strong>Health Crises:</strong> Sudden revenue drops but quick rebounds (e.g., sharp decline in Q2 2020, full recovery by 2021).</p>
+                    <h2>Conclusion</h2>
+                    <p>
+                        Financial crises create long-term damage to the tax base, while health crises lead to short-term shocks with faster recovery. Both emphasize the importance of strong policy responses to stabilize revenues and support economic recovery.
+                    </p>
+                `;
+            } else if (page === 'gdp') {
+                content.innerHTML = `
+                    <h1>GDP Analysis During Economic Crises</h1>
+                    <img src="Visuals/GDP.png" alt="GDP Trends">
+                    <h2>1. The Great Recession (2007–2012): Financial Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The crisis stemmed from the collapse of the housing market and banking system failures. This systemic disruption slowed economic activity, investment, and consumer confidence.</li>
+                        <li><strong>Graph Reaction:</strong> The GDP graph shows a gradual decline starting in 2007 and reaching a low point around 2009, with percentage changes showing steep negative dips (e.g., a sharp drop of -2.4% in Q1 2009). Recovery in GDP is slow, with modest percentage growth (around 0.5-1%) for years, reflecting prolonged economic damage.</li>
+                        <li><strong>Key Insight:</strong> Financial crises create persistent declines, with recovery stretched over years due to weakened financial systems and delayed consumer spending.</li>
+                    </ul>
+                    <h2>2. The COVID-19 Pandemic (2019–2024): Health Crisis</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> A global health crisis led to lockdowns and halted business activity. Unlike the Great Recession, this was an external shock to the economy rather than a systemic issue.</li>
+                        <li><strong>Graph Reaction:</strong> The GDP graph shows an immediate and sharp drop in early 2020, with percentage change plunging by over -9% in Q2 2020, reflecting the sudden halt in economic activity. However, the recovery is rapid, with GDP rebounding strongly by Q4 2020 and percentage growth spiking above 5% in mid-2021, aided by government stimulus and reopening efforts.</li>
+                        <li><strong>Key Insight:</strong> Health crises lead to sharp but short-lived disruptions, with recovery largely dependent on public health interventions and fiscal policy.</li>
+                    </ul>
+                    <h2>Interactions Between Crises</h2>
+                    <ul>
+                        <li><strong>Health Crises Risk Financial Crises:</strong> The sharp GDP drop in Q2 2020 during COVID-19 could have destabilized financial markets, but swift government action (e.g., stimulus checks) prevented this.</li>
+                        <li><strong>Financial Crises Harm Health Outcomes:</strong> During the Great Recession, economic hardship led to stress, reduced healthcare access, and worsened public health outcomes.</li>
+                    </ul>
+                    <h2>Key Takeaway</h2>
+                    <p>
+                        <strong>Financial Crises:</strong> Gradual GDP decline and slow recovery (e.g., -2.4% in Q1 2009, sluggish growth through 2011) highlight the long-term damage to financial systems, consumer confidence, and investment.<br>
+                        <strong>Health Crises:</strong> Sudden GDP drops (e.g., -9% in Q2 2020) with sharp rebounds (e.g., >5% growth in 2021) reflect the temporary nature of disruptions caused by external shocks like pandemics, where recovery depends on swift and strong policy responses.
+                    </p>
+                    <h2>Conclusion</h2>
+                    <p>
+                        Financial crises stem from structural issues in the economy, leading to prolonged instability and slow recovery. Health crises, while more sudden, tend to recover faster if effective public health and economic measures are implemented. However, both crises are deeply interconnected—health crises can destabilize financial systems, while financial crises can exacerbate health outcomes.
+                    </p>
+                `;
+            } else if (page === 'unemployment') {
+                content.innerHTML = `
+                    <h1>Unemployment Rate Analysis During Economic Crises</h1>
+                    <img src="Visuals/UNEMPLOYMENT.png" alt="Unemployment Rate Trends">
+                    <h2>1. The Great Recession</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The financial crisis led to widespread job losses as businesses downsized or closed, driving up unemployment. Layoffs were especially pronounced in the construction and financial sectors due to the housing market collapse and credit crunch.</li>
+                        <li><strong>Graph Reaction:</strong> The unemployment rate rose steadily from about 4.6% in 2007 to a peak of 9.6% in 2010. Although the unemployment rate began to decline in 2011, the recovery was slow, and the rate remained above pre-crisis levels for several years.</li>
+                        <li><strong>Key Insight:</strong> Financial crises cause prolonged unemployment spikes, as the recovery of jobs depends on rebuilding business confidence and stabilizing financial markets.</li>
+                    </ul>
+                    <h2>2. The COVID-19 Pandemic</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The pandemic triggered sudden mass layoffs as entire industries (hospitality, travel, retail) shut down during lockdowns. This led to a sharp and unprecedented spike in unemployment.</li>
+                        <li><strong>Graph Reaction:</strong> The unemployment rate jumped from about 3.5% in early 2020 to a peak of 14.7% in April 2020, the highest on record since the Great Depression. By 2021, the unemployment rate was already below 5%, thanks to swift government interventions, stimulus payments, and the reopening of businesses.</li>
+                        <li><strong>Key Insight:</strong> Health crises can cause rapid unemployment surges, but strong fiscal measures and the resumption of normal economic activity can facilitate a quicker rebound.</li>
+                    </ul>
+                    <h2>Key Takeaway</h2>
+                    <p><strong>Financial Crises:</strong> Gradual rise in unemployment and slow recovery (e.g., peak at 9.6% in 2010, slow decline afterward)..<br>
+                    <strong>Health Crises:</strong> Sharp, temporary spikes with quicker rebounds (e.g., peak at 14.7% in 2020, significant recovery by 2021)..</p>
+                    <h2>Conclusion</h2>
+                    <p>Financial crises cause persistent unemployment due to structural issues, while health crises lead to short-term spikes that recover faster. Both highlight the importance of tailored policy responses—stimulus and job support during health crises, and long-term economic reforms after financial crises—to restore employment levels..</p>
+                `;
+            } else if (page === 'regression') {
+                content.innerHTML = `
+                    <h1>Regression Analysis</h1>
+                    <img src="Visuals/REGRESSION.png" alt="Regression Analysis Results">
+                    <p>Add your detailed explanation about Regression here.</p>
+                `;
+            }
         }
     </script>
 </body>
