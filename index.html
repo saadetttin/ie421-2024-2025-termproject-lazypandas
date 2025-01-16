@@ -3,146 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Project</title>
+    <title>Lazy Pandas - Tax Insights</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
         }
-        .plot-container {
-            margin-bottom: 50px;
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            background-color: #003b73;
+            color: white;
+            padding-top: 20px;
         }
-        .page {
-            display: none;
-        }
-        .page.active {
+        .sidebar a {
+            color: white;
+            text-decoration: none;
             display: block;
+            padding: 10px 20px;
+            margin: 5px 0;
         }
-        .nav-button {
-            margin: 10px;
+        .sidebar a:hover {
+            background-color: #0056b3;
         }
-        .project-image {
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        img {
             max-width: 100%;
             height: auto;
-            margin: 20px 0;
-        }
-        .poster {
-            background-color: #f5f5f5;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 30px;
-            margin: 30px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .poster h2 {
-            color: #0056b3;
-        }
-        .poster p {
-            margin-bottom: 15px;
-            color: #333;
-        }
-        .poster ul {
-            list-style: square;
-            margin-left: 20px;
-        }
-        header {
-            background: url('BLOG-2099x600-WEO-CH-1-men-on-motorbike-indonesia-WILLY-KURNIAWAN-REUTERS-Newscom-rtrleleven948224.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            padding: 50px 0;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <header class="text-center">
-        <h1>Data Science Storytelling</h1>
-        <p>An insightful journey through data analysis and visualization.</p>
-    </header>
-
-    <main class="container my-5">
-        <!-- Page 1: Introduction and Storytelling -->
-        <div class="page active" id="page1">
-            <section class="mb-5">
-                <h2>Introduction</h2>
-                <p>Welcome to my data science project. This analysis explores key trends and insights from real-world data, presented with interactive visualizations. The project demonstrates advanced techniques and tools to uncover valuable insights.</p>
-                <img src="project-image.jpg" alt="Project Description Image" class="project-image text-center">
-            </section>
-
-            <section class="poster">
-                <h2>Comparing Economic Crises: Great Recession vs COVID-19</h2>
-                <p><strong>Great Recession (2007–2012):</strong> Triggered by the collapse of the housing market and financial institutions, this crisis led to a sharp economic downturn, widespread unemployment, and slow recovery over several years.</p>
-                <p><strong>COVID-19 Pandemic (2019–2024):</strong> A global health crisis that disrupted supply chains and caused sudden economic contraction. Unlike the Great Recession, recovery efforts were swift, marked by volatility and rapid rebounds in certain sectors.</p>
-                <p><strong>Key Insights:</strong></p>
-                <ul>
-                    <li>The Great Recession highlighted the need for stricter financial regulations.</li>
-                    <li>COVID-19 demonstrated the importance of rapid fiscal and monetary interventions.</li>
-                    <li>Both events underscore the resilience of economies and the importance of data-driven policymaking.</li>
-                </ul>
-            </section>
-
-            <div class="text-center">
-                <button class="btn btn-primary nav-button" onclick="goToPage(2)">Go to Visualizations</button>
-            </div>
-        </div>
-
-        <!-- Page 2: Visualizations -->
-        <div class="page" id="page2">
-            <section class="mb-5">
-                <h2>Visualizations</h2>
-                <div class="plot-container">
-                    <h3>Plot 1: GDP Over Time</h3>
-                    <p>This plot showcases how GDP has changed over the years, highlighting periods of economic growth and recession.</p>
-                    <div id="plot1"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 2: GDP Percentage Change</h3>
-                    <p>Visualizing the percentage changes in GDP provides a clearer picture of economic stability and volatility.</p>
-                    <div id="plot2"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 3: Sector Contribution to GDP</h3>
-                    <p>This visualization breaks down how different sectors contribute to the overall GDP, showcasing their importance over time.</p>
-                    <div id="plot3"></div>
-                </div>
-
-                <div class="plot-container">
-                    <h3>Plot 4: Unemployment and GDP Correlation</h3>
-                    <p>This plot explores the correlation between unemployment rates and GDP, offering insights into economic health.</p>
-                    <div id="plot4"></div>
-                </div>
-
-                <section class="mt-5">
-                    <h2>Conclusion</h2>
-                    <p>In conclusion, this project demonstrates the power of data-driven storytelling to uncover meaningful insights. Through these visualizations, we can better understand the trends, challenges, and opportunities within the data.</p>
-                </section>
-
-                <div class="text-center">
-                    <button class="btn btn-secondary nav-button" onclick="goToPage(1)">Back to Introduction</button>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 Data Science Project by [Your Name]</p>
-    </footer>
-
-    <script>
-        function goToPage(pageNumber) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById(`page${pageNumber}`).classList.add('active');
-        }
-    </script>
+    <div class="sidebar">
+        <h3 class="text-center">Lazy Pandas</h3>
+        <a href="index.html">Home</a>
+        <a href="tax.html">Tax</a>
+        <a href="gdp.html">GDP</a>
+        <a href="unemployment.html">Unemployment</a>
+        <a href="regression.html">Regression</a>
+    </div>
+    <div class="content">
+        <h1>Tax Insights</h1>
+        <p>This chart shows the Total Tax Revenue Trends with quarterly shading for significant economic periods:</p>
+        <!-- Visual/TAX.png -->
+        <img src="images/TAX.png" alt="Total Tax Revenue Trends">
+        <p>Explanation of the chart and additional insights can go here.</p>
+    </div>
 </body>
 </html>
