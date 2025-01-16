@@ -44,7 +44,7 @@
             border: 1px solid #ccc;
             margin: 20px auto;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #002b5c;
             font-weight: bold;
         }
@@ -55,6 +55,10 @@
         h2 {
             font-size: 1.8rem;
             margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
         }
         ul {
             font-size: 1rem;
@@ -88,15 +92,76 @@
         <h1>Welcome to Lazy Pandas</h1>
         <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
     </div>
+<script>
+    function showPage(page) {
+        const content = document.getElementById('content');
+        if (page === 'home') {
+            content.innerHTML = `
+                <h1>Welcome to Lazy Pandas</h1>
+                <p style="text-align: center;">
+                    In this project, we delve into the economic impacts of two major crises: 
+                    <strong>The Great Recession (2007–2012)</strong> and <strong>The COVID-19 Pandemic (2019–2024)</strong>. 
+                    These crises disrupted global economies in unique ways, leading to significant changes in taxation, GDP, 
+                    and unemployment rates.
+                </p>
+                
+                <h2 style="text-align: center;">About the Crises</h2>
 
-    <script>
-        function showPage(page) {
-            const content = document.getElementById('content');
-            if (page === 'home') {
-                content.innerHTML = `
-                    <h1>Welcome to Lazy Pandas</h1>
-                    <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
-                `;
+                <!-- Great Recession Section -->
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <img src="Visuals/Great_Recession.png" alt="Great Recession Image" style="max-width: 60%; height: auto; margin: 0 auto; display: block; border: 1px solid #ccc;">
+                    <h3 style="text-align: center;">The Great Recession (2007–2012)</h3>
+                    <p style="text-align: center;">
+                        The Great Recession originated from the collapse of the U.S. housing market, triggered by subprime 
+                        mortgage failures and banking system collapses. It led to a prolonged period of economic stagnation, 
+                        affecting jobs, investments, and consumer spending. Its long-term effects are visible in the slow 
+                        recovery of GDP and tax revenues across major economies.
+                    </p>
+                </div>
+
+                <!-- COVID-19 Pandemic Section -->
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <img src="Visuals/COVID_Pandemic.png" alt="COVID-19 Pandemic Image" style="max-width: 60%; height: auto; margin: 0 auto; display: block; border: 1px solid #ccc;">
+                    <h3 style="text-align: center;">The COVID-19 Pandemic (2019–2024)</h3>
+                    <p style="text-align: center;">
+                        The COVID-19 pandemic was an unprecedented health crisis that brought global economies to a standstill 
+                        due to lockdowns and halted business activities. Unlike financial crises, this external shock required 
+                        public health interventions and fiscal stimulus for recovery.
+                    </p>
+                    <p style="text-align: center;">
+                        The economic effects included a sharp drop in GDP during the first half of 2020, a spike in unemployment 
+                        rates, and significant tax revenue losses. However, rapid government responses, such as stimulus checks 
+                        and business loans, helped the economy recover more quickly than during the Great Recession.
+                    </p>
+                </div>
+                
+                <h2 style="text-align: center;">Data Sources</h2>
+                <p style="text-align: center;">
+                    The datasets used in this project were sourced from the following trusted repositories:
+                </p>
+                <ul style="text-align: left; max-width: 80%; margin: 0 auto;">
+                    <li><strong>World Bank:</strong> For GDP data spanning multiple decades.</li>
+                    <li><strong>U.S. Bureau of Labor Statistics (BLS):</strong> For unemployment rate trends.</li>
+                    <li><strong>Internal Revenue Service (IRS):</strong> For tax revenue data during economic crises.</li>
+                </ul>
+                <p style="text-align: center;">
+                    The data includes metrics such as quarterly GDP (in trillions), unemployment rates (in percentages), 
+                    and total tax revenues (in billions). These datasets were cleaned and processed for analysis.
+                </p>
+                
+                <h2 style="text-align: center;">Conclusion</h2>
+                <p style="text-align: center;">
+                    This project explores the interconnected impacts of financial and health crises on taxation, GDP, 
+                    and unemployment. Navigate through the pages to gain insights into each aspect and understand 
+                    the broader relationships between these metrics during crises.
+                </p>
+                <p style="text-align: center;">
+                    <strong>Explore Further:</strong> Visit the pages on <a href="#" onclick="showPage('tax')">Tax</a>, 
+                    <a href="#" onclick="showPage('gdp')">GDP</a>, and <a href="#" onclick="showPage('unemployment')">Unemployment</a> 
+                    to see detailed analysis and visualizations. Discover how these crises shaped our economies and informed 
+                    recovery strategies.
+                </p>
+            `;
             } else if (page === 'tax') {
                 content.innerHTML = `
                     <h1>Tax Revenue Analysis During Economic Crises</h1>
@@ -169,16 +234,55 @@
                         <li><strong>Key Insight:</strong> Health crises can cause rapid unemployment surges, but strong fiscal measures and the resumption of normal economic activity can facilitate a quicker rebound.</li>
                     </ul>
                     <h2>Key Takeaway</h2>
-                    <p><strong>Financial Crises:</strong> Gradual rise in unemployment and slow recovery (e.g., peak at 9.6% in 2010, slow decline afterward)..<br>
-                    <strong>Health Crises:</strong> Sharp, temporary spikes with quicker rebounds (e.g., peak at 14.7% in 2020, significant recovery by 2021)..</p>
+                    <p><strong>Financial Crises:</strong> Prolonged unemployment with slow recovery.<br>
+                    <strong>Health Crises:</strong> Short-term unemployment spikes with faster recovery.</p>
                     <h2>Conclusion</h2>
-                    <p>Financial crises cause persistent unemployment due to structural issues, while health crises lead to short-term spikes that recover faster. Both highlight the importance of tailored policy responses—stimulus and job support during health crises, and long-term economic reforms after financial crises—to restore employment levels..</p>
+                    <p>Both financial and health crises highlight the need for robust policy measures to mitigate the impact on unemployment and expedite recovery.</p>
                 `;
             } else if (page === 'regression') {
-                content.innerHTML = `
+                      content.innerHTML = `
                     <h1>Regression Analysis</h1>
-                    <img src="Visuals/REGRESSION.png" alt="Regression Analysis Results">
-                    <p>Add your detailed explanation about Regression here.</p>
+                    
+                    <!-- Correlation Analysis Section -->
+                    <div style="text-align: center; margin-bottom: 50px;">
+                        <h2>Correlation Analysis During Crises in the United States</h2>
+                        <img src="Visuals/Heatmap.png" alt="Heatmap of Correlations" style="max-width: 60%; height: auto; margin: 20px auto; display: block; border: 1px solid #ccc;">
+                        <p>
+                            Heatmaps reveal how U.S. GDP, total taxes, and unemployment rates interact during both the Great Recession 
+                            and the COVID-19 pandemic:
+                        </p>
+                        <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
+                            <li><strong>During the 2008 Crisis (2008–2009):</strong>
+                                <ul>
+                                    <li><strong>GDP vs. Unemployment:</strong> A moderate negative correlation indicates that as GDP sank, unemployment soared.</li>
+                                    <li><strong>Total Taxes vs. GDP:</strong> A weak relationship suggests that tax policy alone couldn’t counteract the financial meltdown.</li>
+                                    <li><strong>Taxes vs. Unemployment:</strong> A mild negative link suggests higher tax revenues helped stabilize jobs during this period.</li>
+                                </ul>
+                            </li>
+                            <li><strong>During the COVID Crisis (2020–2021):</strong>
+                                <ul>
+                                    <li><strong>GDP vs. Unemployment:</strong> A slight positive correlation reflects GDP recovery outpacing unemployment improvement.</li>
+                                    <li><strong>Total Taxes vs. GDP:</strong> A pronounced positive correlation shows that swift stimulus measures bolstered economic output.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p><strong>Key Takeaway:</strong> Financial crises erode economic health gradually, while health crises cause sharp but short-lived disruptions.</p>
+                    </div>
+    
+                    <!-- Regression Model Insights Section -->
+                    <div style="text-align: center; margin-bottom: 50px;">
+                        <h2>Regression Model Insights (U.S. Perspective)</h2>
+                        <img src="Visuals/Regression_Model.png" alt="Regression Model Insights" style="max-width: 60%; height: auto; margin: 20px auto; display: block; border: 1px solid #ccc;">
+                        <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
+                            <li><strong>GDP Coefficient:</strong> A subtle influence suggests GDP changes don’t immediately affect unemployment, especially during crises.</li>
+                            <li><strong>Total Taxes Coefficient:</strong> A negative coefficient means rising tax revenues support lower unemployment via government programs.</li>
+                            <li><strong>Interaction Term:</strong> GDP and taxes largely act independently on unemployment, with no strong combined effect.</li>
+                        </ul>
+                        <p>
+                            Comparing actual and predicted unemployment rates shows the model captures overall trends 
+                            but misses certain outliers caused by abrupt policy changes or industry-specific events.
+                        </p>
+                    </div>
                 `;
             }
         }
