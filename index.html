@@ -241,49 +241,79 @@
                 `;
             } else if (page === 'regression') {
                       content.innerHTML = `
-                    <h1>Regression Analysis</h1>
-                    
-                    <!-- Correlation Analysis Section -->
-                    <div style="text-align: center; margin-bottom: 50px;">
-                        <h2>Correlation Analysis During Crises in the United States</h2>
-                        <img src="Visuals/Col.png" alt="Heatmap of Correlations" style="max-width: 80%; height: auto; margin: 20px auto; display: block; border: 1px solid #ccc;">
-                        <p>
-                            Heatmaps reveal how U.S. GDP, total taxes, and unemployment rates interact during both the Great Recession 
-                            and the COVID-19 pandemic:
-                        </p>
-                        <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
-                            <li><strong>During the 2008 Crisis (2008–2009):</strong>
-                                <ul>
-                                    <li><strong>GDP vs. Unemployment:</strong> A moderate negative correlation indicates that as GDP sank, unemployment soared.</li>
-                                    <li><strong>Total Taxes vs. GDP:</strong> A weak relationship suggests that tax policy alone couldn’t counteract the financial meltdown.</li>
-                                    <li><strong>Taxes vs. Unemployment:</strong> A mild negative link suggests higher tax revenues helped stabilize jobs during this period.</li>
-                                </ul>
-                            </li>
-                            <li><strong>During the COVID Crisis (2020–2021):</strong>
-                                <ul>
-                                    <li><strong>GDP vs. Unemployment:</strong> A slight positive correlation reflects GDP recovery outpacing unemployment improvement.</li>
-                                    <li><strong>Total Taxes vs. GDP:</strong> A pronounced positive correlation shows that swift stimulus measures bolstered economic output.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p><strong>Key Takeaway:</strong> Financial crises erode economic health gradually, while health crises cause sharp but short-lived disruptions.</p>
+<h1 style="text-align: center;">Regression Analysis</h1>
+                
+                <!-- Correlation Analysis Section -->
+                <div style="margin-bottom: 50px;">
+                    <h2 style="text-align: center;">Correlation Analysis During Crises in the United States</h2>
+                    <div style="text-align: center;">
+                        <img src="Visuals/Col.png" alt="Heatmap of Correlations" style="max-width: 60%; height: auto; margin: 0 auto; display: block; border: 1px solid #ccc;">
                     </div>
-    
-                    <!-- Regression Model Insights Section -->
-                    <div style="text-align: center; margin-bottom: 50px;">
-                        <h2>Regression Model Insights (U.S. Perspective)</h2>
-                        <img src="Visuals/Reg.png" alt="Regression Model Insights" style="max-width: 60%; height: auto; margin: 20px auto; display: block; border: 1px solid #ccc;">
-                        <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
-                            <li><strong>GDP Coefficient:</strong> A subtle influence suggests GDP changes don’t immediately affect unemployment, especially during crises.</li>
-                            <li><strong>Total Taxes Coefficient:</strong> A negative coefficient means rising tax revenues support lower unemployment via government programs.</li>
-                            <li><strong>Interaction Term:</strong> GDP and taxes largely act independently on unemployment, with no strong combined effect.</li>
-                        </ul>
-                        <p>
-                            Comparing actual and predicted unemployment rates shows the model captures overall trends 
-                            but misses certain outliers caused by abrupt policy changes or industry-specific events.
-                        </p>
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        As we pan over the timelines of both the Great Recession and the COVID-19 pandemic within the United States, 
+                        a set of heatmaps catches our eye. These visuals lay out how U.S. GDP, total taxes, and the U.S. unemployment 
+                        rate move together—or, in some cases, drift apart—across these turbulent periods.
+                    </p>
+                    <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
+                        <li><strong>During the 2008 Crisis (2008–2009):</strong>
+                            <ul>
+                                <li><strong>GDP vs. Unemployment:</strong> A moderate negative correlation indicates that when U.S. GDP sank, unemployment soared. This mirrors our earlier narrative: crumbling financial systems made it harder for American businesses to stay afloat, leading to job cuts.</li>
+                                <li><strong>Total Taxes vs. GDP:</strong> The relationship is weak, hinting that changes in U.S. tax policy alone didn’t fully counteract the monumental forces of a nationwide (and global) financial meltdown.</li>
+                                <li><strong>Taxes vs. Unemployment:</strong> A mild negative link suggests that, in periods of higher tax revenues, U.S. unemployment dipped slightly—possibly because government programs (funded by those taxes) helped stabilize jobs.</li>
+                            </ul>
+                        </li>
+                        <li><strong>During the COVID Crisis (2020–2021):</strong>
+                            <ul>
+                                <li><strong>GDP vs. Unemployment:</strong> A slight positive correlation reflects that the U.S. GDP started recovering faster while unemployment took longer to bounce back, especially in industries like hospitality and airlines.</li>
+                                <li><strong>Total Taxes vs. GDP:</strong> A pronounced positive correlation shows that swift stimulus measures and relief funding bolstered economic output.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        <strong>Key Takeaway:</strong> Financial crises in the U.S. typically erode economic health more gradually 
+                        but leave lasting scars, while health crises can trigger sharp, short-lived shocks. These correlations 
+                        underscore how government revenues (taxes) and the U.S. job market respond differently depending on 
+                        the root cause of the crisis.
+                    </p>
+                </div>
+
+                <!-- Regression Model Insights Section -->
+                <div style="margin-bottom: 50px;">
+                    <h2 style="text-align: center;">Regression Model Insights (U.S. Perspective)</h2>
+                    <div style="text-align: center;">
+                        <img src="Visuals/Reg.png" alt="Regression Model Insights" style="max-width: 60%; height: auto; margin: 0 auto; display: block; border: 1px solid #ccc;">
                     </div>
-                `;
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        Regression analysis provides deeper insights into the factors affecting unemployment during crises in the United States:
+                    </p>
+                    <ul style="text-align: left; max-width: 80%; margin: 0 auto; line-height: 1.8;">
+                        <li><strong>GDP Coefficient:</strong> A subtle influence suggests GDP changes don’t automatically affect unemployment. This aligns with the idea that businesses hesitate to hire during crises, even if GDP recovers.</li>
+                        <li><strong>Total Taxes Coefficient:</strong> A negative coefficient shows that higher tax revenues support lower unemployment, funding government interventions like unemployment benefits and job-retention schemes.</li>
+                        <li><strong>Interaction Term:</strong> Adding an interaction term (GDP × Total Taxes) reveals limited combined effects, indicating that GDP and taxes act largely independently in their impact on unemployment.</li>
+                    </ul>
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        Comparing actual and predicted unemployment rates shows that while the model captures overarching trends, 
+                        it misses certain outliers caused by abrupt policy changes or industry-specific disruptions.
+                    </p>
+                </div>
+
+                <!-- Validation Section -->
+                <div style="margin-bottom: 50px;">
+                    <h2 style="text-align: center;">Validation Through Predictions</h2>
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        A scatter plot comparing actual unemployment rates to predicted values shows that most points cluster near 
+                        the diagonal “perfect prediction” line, indicating the model's effectiveness in capturing trends. However, 
+                        some outliers highlight the limitations of models in accounting for abrupt policy changes or unique events.
+                    </p>
+                    <p style="text-align: justify; max-width: 80%; margin: 20px auto;">
+                        <strong>Bringing It All Together:</strong> 
+                        Tracking GDP, tax revenues, and unemployment through the Great Recession and the COVID-19 pandemic 
+                        demonstrates how the root cause of a crisis—financial versus health—shapes the speed and nature of recovery. 
+                        Heatmaps show relationships, regression models identify key drivers, and validation reveals the occasional 
+                        curveball that real-world crises throw our way.
+                    </p>
+                </div>
+            `;
             }
         }
     </script>
