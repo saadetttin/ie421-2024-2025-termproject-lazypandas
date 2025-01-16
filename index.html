@@ -36,7 +36,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            min-height: 100vh; /* Ensure content takes the full height */
+            min-height: 100vh;
         }
         img {
             max-width: 80%;
@@ -50,7 +50,7 @@
         }
         h1 {
             font-size: 2.5rem;
-            text-align: left;
+            text-align: center;
         }
         h2 {
             font-size: 1.8rem;
@@ -61,14 +61,14 @@
             line-height: 1.8;
             font-weight: bold;
             text-align: justify;
-            max-width: 80%; /* Matches the width of the graph */
+            max-width: 80%;
         }
         p {
             font-size: 1rem;
             line-height: 1.8;
             font-weight: bold;
             text-align: justify;
-            max-width: 80%; /* Matches the width of the graph */
+            max-width: 80%;
         }
     </style>
 </head>
@@ -85,13 +85,11 @@
 
     <!-- Content Area -->
     <div id="content" class="content">
-        <!-- Default Page -->
         <h1>Welcome to Lazy Pandas</h1>
         <p>Explore data science insights across various domains including Taxation, GDP, Unemployment, and Regression Analysis.</p>
     </div>
 
     <script>
-        // JavaScript to switch content dynamically
         function showPage(page) {
             const content = document.getElementById('content');
             if (page === 'home') {
@@ -116,10 +114,8 @@
                         <li><strong>Key Insight:</strong> Health crises cause temporary disruptions in tax revenue, but recovery can be quick if effective fiscal and monetary policies are implemented.</li>
                     </ul>
                     <h2>Key Takeaway</h2>
-                    <p>
-                        <strong>Financial Crises:</strong> Gradual tax revenue decline and prolonged recovery (e.g., drop from Q4 2007 to Q2 2009, slow recovery through 2010).<br>
-                        <strong>Health Crises:</strong> Sudden revenue drops but quick rebounds (e.g., sharp decline in Q2 2020, full recovery by 2021).
-                    </p>
+                    <p><strong>Financial Crises:</strong> Gradual tax revenue decline and prolonged recovery (e.g., drop from Q4 2007 to Q2 2009, slow recovery through 2010).<br>
+                    <strong>Health Crises:</strong> Sudden revenue drops but quick rebounds (e.g., sharp decline in Q2 2020, full recovery by 2021).</p>
                     <h2>Conclusion</h2>
                     <p>
                         Financial crises create long-term damage to the tax base, while health crises lead to short-term shocks with faster recovery. Both emphasize the importance of strong policy responses to stabilize revenues and support economic recovery.
@@ -133,9 +129,25 @@
                 `;
             } else if (page === 'unemployment') {
                 content.innerHTML = `
-                    <h1>Unemployment Insights</h1>
+                    <h1>Unemployment Rate Analysis During Economic Crises</h1>
                     <img src="Visuals/UNEMPLOYMENT.png" alt="Unemployment Rate Trends">
-                    <p>Add your detailed explanation about Unemployment here.</p>
+                    <h2>1. The Great Recession</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The financial crisis led to widespread job losses as businesses downsized or closed, driving up unemployment. Layoffs were especially pronounced in the construction and financial sectors due to the housing market collapse and credit crunch.</li>
+                        <li><strong>Graph Reaction:</strong> The unemployment rate rose steadily from about 4.6% in 2007 to a peak of 9.6% in 2010. Although the unemployment rate began to decline in 2011, the recovery was slow, and the rate remained above pre-crisis levels for several years.</li>
+                        <li><strong>Key Insight:</strong> Financial crises cause prolonged unemployment spikes, as the recovery of jobs depends on rebuilding business confidence and stabilizing financial markets.</li>
+                    </ul>
+                    <h2>2. The COVID-19 Pandemic</h2>
+                    <ul>
+                        <li><strong>What Happened:</strong> The pandemic triggered sudden mass layoffs as entire industries (hospitality, travel, retail) shut down during lockdowns. This led to a sharp and unprecedented spike in unemployment.</li>
+                        <li><strong>Graph Reaction:</strong> The unemployment rate jumped from about 3.5% in early 2020 to a peak of 14.7% in April 2020, the highest on record since the Great Depression. By 2021, the unemployment rate was already below 5%, thanks to swift government interventions, stimulus payments, and the reopening of businesses.</li>
+                        <li><strong>Key Insight:</strong> Health crises can cause rapid unemployment surges, but strong fiscal measures and the resumption of normal economic activity can facilitate a quicker rebound.</li>
+                    </ul>
+                    <h2>Key Takeaway</h2>
+                    <p><strong>Financial Crises:</strong> Prolonged unemployment with slow recovery.<br>
+                    <strong>Health Crises:</strong> Short-term unemployment spikes with faster recovery.</p>
+                    <h2>Conclusion</h2>
+                    <p>Both financial and health crises highlight the need for robust policy measures to mitigate the impact on unemployment and expedite recovery.</p>
                 `;
             } else if (page === 'regression') {
                 content.innerHTML = `
