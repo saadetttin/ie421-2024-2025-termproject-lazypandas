@@ -28,3 +28,10 @@ Datasets
    https://ilostat.ilo.org/
 5. International Monetary Fund (IMF) Data:
    https://www.imf.org/en/Data
+
+
+
+
+   ## View the HTML File
+[Open HTML File](https://github.com/saadettin/ie421-2024-2025-termproject-lazypandas/blob/main/index.html)
+
