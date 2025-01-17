@@ -98,18 +98,18 @@ function showPage(page) {
     if (page === 'home') {
         content.innerHTML = `
             <h1 style="text-align: center;">Welcome to Lazy Pandas</h1>
-            <p>
+            <p style="text-align: center;">
                 In this project, we delve into the economic impacts of two major crises: 
                 <strong>The Great Recession (2007–2012)</strong> and <strong>The COVID-19 Pandemic (2019–2024)</strong>. 
                 These crises disrupted global economies in unique ways, leading to significant changes in taxation, GDP, 
                 and unemployment rates.
             </p>
             
-            <h2>About the Crises</h2>
+            <h2 style="text-align: center;">About the Crises</h2>
 
             <!-- Great Recession Section -->
-            <div>
-                <img src="Visuals/Economic crisis home.png" alt="Great Recession Image" style="max-width: 100%; height: auto; display: block; margin: 20px 0;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="Visuals/Economic crisis home.png" alt="Great Recession Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
                 <h3>The Great Recession (2007–2012)</h3>
                 <p>
                     The Great Recession originated from the collapse of the U.S. housing market, triggered by subprime 
@@ -120,8 +120,8 @@ function showPage(page) {
             </div>
 
             <!-- COVID-19 Pandemic Section -->
-            <div>
-                <img src="Visuals/Covid home.png" alt="COVID-19 Pandemic Image" style="max-width: 100%; height: auto; display: block; margin: 20px 0;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="Visuals/Covid home.png" alt="COVID-19 Pandemic Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
                 <h3>The COVID-19 Pandemic (2019–2024)</h3>
                 <p>
                     The COVID-19 pandemic was an unprecedented health crisis that brought global economies to a standstill 
@@ -135,27 +135,27 @@ function showPage(page) {
                 </p>
             </div>
             
-            <h2>Data Sources</h2>
-            <p>
+            <h2 style="text-align: center;">Data Sources</h2>
+            <p style="text-align: center;">
                 The datasets used in this project were sourced from the following trusted repositories:
             </p>
-            <ul>
+            <ul style="text-align: center; list-style-position: inside;">
                 <li><strong>World Bank:</strong> For GDP data spanning multiple decades.</li>
                 <li><strong>U.S. Bureau of Labor Statistics (BLS):</strong> For unemployment rate trends.</li>
                 <li><strong>Internal Revenue Service (IRS):</strong> For tax revenue data during economic crises.</li>
             </ul>
-            <p>
+            <p style="text-align: center;">
                 The data includes metrics such as quarterly GDP (in trillions), unemployment rates (in percentages), 
                 and total tax revenues (in billions). These datasets were cleaned and processed for analysis.
             </p>
             
-            <h2>Conclusion</h2>
-            <p>
+            <h2 style="text-align: center;">Conclusion</h2>
+            <p style="text-align: center;">
                 This project explores the interconnected impacts of financial and health crises on taxation, GDP, 
                 and unemployment. Navigate through the pages to gain insights into each aspect and understand 
                 the broader relationships between these metrics during crises.
             </p>
-            <p>
+            <p style="text-align: center;">
                 <strong>Explore Further:</strong> Visit the pages on <a href="#" onclick="showPage('tax')">Tax</a>, 
                 <a href="#" onclick="showPage('gdp')">GDP</a>, and <a href="#" onclick="showPage('unemployment')">Unemployment</a> 
                 to see detailed analysis and visualizations. Discover how these crises shaped our economies and informed 
